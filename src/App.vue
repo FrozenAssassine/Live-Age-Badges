@@ -14,3 +14,7 @@ export default defineComponent({
     components: { GeneratorPage }
 });
 </script>
+
+<style lang="scss" scoped>
+@import url("./styles/Main.scss");
+</style>
