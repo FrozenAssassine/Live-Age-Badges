@@ -17,23 +17,19 @@
     },
     methods:{
         generateAgeImage() {
-            const birthdate = this.$route.query.birthdate as string;
             const textColor = this.$route.query.textcolor as string;
+            const birthdate = this.$route.query.birthdate as string;
             const fontsize = this.$route.query.fontsize as string;
             const fontfamily = this.$route.query.fontfamily as string;
-            const timezone = this.$route.query.timezone as string;
-
-            const font_number = fontsize == null ? 15 : fontsize as number;
-            const age = this.calculateAge(new Date(birthdate), timezone ?? "America/New_York");
+            const font_number = fontsize == null ? 15 : Number(fontsize);
+            const age = this.calculateAge(new Date(birthdate), "America/New_York");
 
             const canvas = document.createElement("canvas");
             const context = canvas.getContext("2d") as CanvasRenderingContext2D;
             canvas.width = font_number * 2;
             canvas.height = font_number * 1.2;
-            // context.fillStyle = '#ffffff';
-            context.fillRect(0, 0, canvas.width, canvas.height);
             context.font = `${fontsize}px ${fontfamily ?? "Arial"}`;
-            context.fillStyle = "#" + (textColor ?? "000000");
+            context.fillStyle = "#" + textColor ?? "ffffff";
             context.fillText(age.toString(), 5, font_number);
 
             this.imageSrc = canvas.toDataURL();
