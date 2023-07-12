@@ -1,0 +1,75 @@
+.generatorpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.item_headline {
+    font-size: 2em;
+    color: white;
+}
+
+.picker {
+    margin: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.itemheadline {
+    width: 7em;
+    color: white;
+    font-size: clamp(1.2em, 1.7vw, 3em);
+}
+
+.headline {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    color: #90b9ee;
+    font-size: clamp(3em, 4vw, 6em);
+}
+
+.form {
+    padding: 1em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 50px;
+    background: #292929;
+    box-shadow: 26px 26px 52px #1f1f1f, -26px -26px 52px #333333;
+}
+
+.inputbox {
+    outline: none;
+    background-color: white;
+    color: black;
+    border-radius: 0.3em;
+    border: transparent;
+    width: 7em;
+    height: 1.6em;
+    font-size: clamp(1.5em, 2.2vw, 3.5em);
+}
+
+.copybutton{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.5em 1em;
+    margin: 2em;
+    font-size: clamp(1.2em, 1.8vw, 3em);
+    border: 0.1em solid white;
+    color: white;
+    border-radius: 0.5em;
+    transition-duration: 300ms;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #90b9ee;
+        box-shadow: 26px 26px 52px #1f1f1f, -26px -26px 52px #333333;
+    }    
+}
